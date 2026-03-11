@@ -1,4 +1,5 @@
 <template>
+  <!-- 为整个应用提供组件库语言环境，并挂载全局路由与弹层容器 -->
   <el-config-provider :locale="currentLocale">
     <router-view />
     <ReDialog />
@@ -29,12 +30,15 @@ export default defineComponent({
   setup() {
     const router = useRouter();
     const { $storage } = useGlobal<GlobalPropertiesApi>();
+
+    // 根据本地缓存的语言设置，动态合并 Element Plus 与 Plus Pro 的语言包
     const currentLocale = computed(() => {
       return $storage.locale?.locale === "zh"
         ? { ...zhCn, ...plusZhCn }
         : { ...en, ...plusEn };
     });
 
+    // 每次路由切换前关闭所有全局对话框和抽屉，避免跨页面残留
     router.beforeEach(() => {
       closeAllDialog();
       closeAllDrawer();

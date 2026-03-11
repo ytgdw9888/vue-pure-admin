@@ -24,6 +24,7 @@ import "element-plus/dist/index.css";
 import "./assets/iconfont/iconfont.js";
 import "./assets/iconfont/iconfont.css";
 
+// 创建应用实例，后续所有插件、组件和指令都挂载到这个根实例上
 const app = createApp(App);
 
 // 自定义指令
@@ -55,10 +56,15 @@ import VueTippy from "vue-tippy";
 app.use(VueTippy);
 
 getPlatformConfig(app).then(async config => {
+  // 先初始化状态和路由，保证后续插件可以读取到完整的全局上下文
   setupStore(app);
   app.use(router);
   await router.isReady();
+
+  // 平台配置加载完成后再注入响应式存储，确保配置项可参与运行时适配
   injectResponsiveStorage(app, config);
+
+  // 统一注册全局插件后再挂载，避免首屏阶段出现未注册依赖
   app
     .use(MotionPlugin)
     .use(useI18n)
