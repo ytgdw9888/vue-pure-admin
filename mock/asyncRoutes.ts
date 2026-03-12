@@ -329,11 +329,8 @@ export default defineFakeRoute([
         code: 0,
         message: "操作成功",
         data: [
-          systemManagementRouter,
-          systemMonitorRouter,
-          permissionRouter,
-          frameRouter,
-          tabsRouter
+          // 当前仅保留“系统管理”菜单；后续如需恢复其他动态菜单，在这里继续追加即可
+          systemManagementRouter
         ]
       };
     }

@@ -11,7 +11,8 @@ export default {
   meta: {
     icon: "ep/home-filled",
     title: $t("menus.pureHome"),
-    rank: home
+    rank: home,
+    showLink: false
   },
   children: [
     {
@@ -20,7 +21,7 @@ export default {
       component: () => import("@/views/welcome/index.vue"),
       meta: {
         title: $t("menus.pureHome"),
-        showLink: VITE_HIDE_HOME === "true" ? false : true
+        showLink: false
       }
     }
   ]

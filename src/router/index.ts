@@ -43,7 +43,33 @@ import {
  * 如何排除文件请看：https://cn.vitejs.dev/guide/features.html#negative-patterns
  */
 const modules: Record<string, any> = import.meta.glob(
-  ["./modules/**/*.ts", "!./modules/**/remaining.ts"],
+  [
+    "./modules/**/*.ts",
+    "!./modules/**/remaining.ts", // 排除 remaining.ts 文件（保留为非菜单路由）
+    // 只保留 home.ts 作为根布局容器，其余静态菜单先全部排除；后续如需恢复，删除对应排除项即可
+    "!./modules/**/able.ts", // 功能（如需恢复此菜单，删除这一行）
+    "!./modules/**/about.ts", // 关于（如需恢复此菜单，删除这一行）
+    "!./modules/**/board.ts", // 艺术画板（如需恢复此菜单，删除这一行）
+    "!./modules/**/chatai.ts", // chat-ai（如需恢复此菜单，删除这一行）
+    "!./modules/**/codemirror.ts", // 代码编辑器（如需恢复此菜单，删除这一行）
+    "!./modules/**/components.ts", // 组件（如需恢复此菜单，删除这一行）
+    "!./modules/**/editor.ts", // 编辑器（如需恢复此菜单，删除这一行）
+    "!./modules/**/error.ts", // 异常页面（如需恢复此菜单，删除这一行）
+    "!./modules/**/flowchart.ts", // 流程图（如需恢复此菜单，删除这一行）
+    "!./modules/**/form.ts", // 表单（如需恢复此菜单，删除这一行）
+    "!./modules/**/formdesign.ts", // 表单设计器（如需恢复此菜单，删除这一行）
+    "!./modules/**/ganttastic.ts", // 甘特图（如需恢复此菜单，删除这一行）
+    "!./modules/**/guide.ts", // 引导页（如需恢复此菜单，删除这一行）
+    "!./modules/**/list.ts", // 列表页面（如需恢复此菜单，删除这一行）
+    "!./modules/**/markdown.ts", // Markdown（如需恢复此菜单，删除这一行）
+    "!./modules/**/menuoverflow.ts", // 目录超出显示 Tooltip 文字提示（如需恢复此菜单，删除这一行）
+    "!./modules/**/mind.ts", // 思维导图（如需恢复此菜单，删除这一行）
+    "!./modules/**/nested.ts", // 多级菜单（如需恢复此菜单，删除这一行）
+    "!./modules/**/ppt.ts", // 标签页操作（如需恢复此菜单，删除这一行）
+    "!./modules/**/result.ts", // 结果页面（如需恢复此菜单，删除这一行）
+    "!./modules/**/table.ts", // 表格（如需恢复此菜单，删除这一行）
+    "!./modules/**/vueflow.ts" // vue-flow（如需恢复此菜单，删除这一行）
+  ],
   {
     eager: true
   }
