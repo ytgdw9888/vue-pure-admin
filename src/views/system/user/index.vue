@@ -54,6 +54,7 @@ const {
   <div :class="['flex', 'justify-between', deviceDetection() && 'flex-wrap']">
     <tree
       ref="treeRef"
+      hidden="true"
       :class="['mr-2', deviceDetection() ? 'w-full' : 'min-w-50']"
       :treeData="treeData"
       :treeLoading="treeLoading"
@@ -110,11 +111,7 @@ const {
         </el-form-item>
       </el-form>
 
-      <PureTableBar
-        title="用户管理（仅演示，操作后不生效）"
-        :columns="columns"
-        @refresh="onSearch"
-      >
+      <PureTableBar title="用户管理" :columns="columns" @refresh="onSearch">
         <template #buttons>
           <el-button
             type="primary"
