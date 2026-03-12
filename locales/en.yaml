@@ -68,6 +68,7 @@ menus:
   pureLogin: Login
   pureEmpty: Empty Page
   pureTable: Table
+  pureStock: Stock
   pureSysManagement: System Manage
   pureUser: User Manage
   pureRole: Role Manage
@@ -191,6 +192,7 @@ menus:
   pureMindMap: Mind Map
   pureMenuOverflow: Menu Overflow Show Tooltip Text
   pureChildMenuOverflow: Child Menu Overflow Show Tooltip Text
+  pureCandlestickBrush: candlestick-brush
 status:
   pureLoad: Loading...
   pureMessage: Message

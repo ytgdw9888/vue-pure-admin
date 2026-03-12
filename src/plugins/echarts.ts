@@ -1,8 +1,10 @@
 import type { App } from "vue";
 import * as echarts from "echarts/core";
-import { PieChart, BarChart, LineChart } from "echarts/charts";
+import { PieChart, BarChart, LineChart, CandlestickChart } from "echarts/charts";
 import { CanvasRenderer, SVGRenderer } from "echarts/renderers";
 import {
+  AxisPointerComponent,
+  BrushComponent,
   GridComponent,
   TitleComponent,
   PolarComponent,
@@ -20,8 +22,11 @@ use([
   PieChart,
   BarChart,
   LineChart,
+  CandlestickChart,
   CanvasRenderer,
   SVGRenderer,
+  AxisPointerComponent,
+  BrushComponent,
   GridComponent,
   TitleComponent,
   PolarComponent,

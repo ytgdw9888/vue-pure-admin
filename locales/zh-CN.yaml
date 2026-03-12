@@ -68,6 +68,7 @@ menus:
   pureLogin: 登录
   pureEmpty: 无Layout页
   pureTable: 表格
+  pureStock: Stock
   pureSysManagement: 系统管理
   pureUser: 用户管理
   pureRole: 角色管理
@@ -191,6 +192,7 @@ menus:
   pureMindMap: 思维导图
   pureMenuOverflow: 目录超出显示 Tooltip 文字提示
   pureChildMenuOverflow: 菜单超出显示 Tooltip 文字提示
+  pureCandlestickBrush: candlestick-brush
 status:
   pureLoad: 加载中...
   pureMessage: 消息
